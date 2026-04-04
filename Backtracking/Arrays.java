@@ -10,6 +10,7 @@ public class Arrays {
 
         ///// recursion 
         arr[index] = value;
+        changeArr(arr, index+1, value+1);
         arr[index] = arr[index] -2;
     }
 
