@@ -10,8 +10,8 @@ public class Arrays {
 
         ///// recursion 
         arr[index] = value;
-        changeArr(arr, index+1, value+1);
-        arr[index] = arr[index] -2;
+        changeArr(arr, index+1, value+1);//// function call step 
+        arr[index] = arr[index] - 2;//// backtracking step
     }
 
     public static void printArr(int arr[]){
