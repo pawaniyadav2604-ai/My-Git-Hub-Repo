@@ -12,14 +12,21 @@ public class maxnumber {
         list.add(7);
         list.add(8);
        System.out.println(list);
-       int max=  Integer.MIN_VALUE;
+       int max = Integer.MIN_VALUE;
+        for (int i = 0; i < list.size(); i++) {
+            max = Math.max(max, list.get(i));  
+        }
+        System.out.println(max);
+        
 
-       for (int index = 0; index < list.size(); index++) {
-          if(max < list.get(index)){
-               max = list.get(index);
-          }
-       }
-       System.out.println("Max element is : " + max);
+     //   int max=  Integer.MIN_VALUE;
+
+     //   for (int index = 0; index < list.size(); index++) {
+     //      if(max < list.get(index)){
+     //           max = list.get(index);
+     //      }
+     //   }
+     //   System.out.println("Max element is : " + max);
 
      }
 }
