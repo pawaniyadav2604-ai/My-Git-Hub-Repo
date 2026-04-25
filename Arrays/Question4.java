@@ -33,6 +33,8 @@ public static void main(String[] args) {
        System.out.print(" the array after deleting the element :");
        for(int i=0 ; i<n; i++){
            System.out.print(arr[i] + " ");
-       }
+       
+        }
+        sc.close();
     }
 }

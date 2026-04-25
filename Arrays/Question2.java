@@ -13,5 +13,6 @@ class Question2 {
         }
         System.out.println("the sum of all elements is : "  +sum);
         System.out.println("the average of the alements is : " + sum/number);
+        sc.close();
     }
 }

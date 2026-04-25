@@ -33,7 +33,9 @@ class Question11 {
         } else {
             System.out.println("Second smallest element in: " + secondMin);
         }
+        sc.close();
     }
+
 } 
 
 

@@ -23,6 +23,7 @@ class Question12 {
         }
 
         System.out.println("Smallest element in: " + min);
+    sc.close();
     }
 }
 

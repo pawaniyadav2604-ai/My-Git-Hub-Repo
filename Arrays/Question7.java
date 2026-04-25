@@ -27,6 +27,6 @@ public class Question7 {
             System.out.println();
         }
 
-
+        sc.close();
     }
 }
