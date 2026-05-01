@@ -16,6 +16,7 @@ class Addfirst {
     public static nodes tail ;
 
     public void addfirst(int data ){
+        
         /// create new node 
         nodes newNode  = new nodes(data);
 
@@ -24,16 +25,15 @@ class Addfirst {
             return;
         }
 
-        // newnodes nest = head 
-        newNode.next = head; //// link 
+        // newnodes next = head 
+        newNode.next = head; //// link  kiya hai ek node ko dusre node se 
 
-
-        // head = newnode 
+           // head = newnode 
         head = newNode;
     }
     public static void main(String[] args) {
-        LinkedList ll = new LinkedList();
-        ll.head(1);
+        LinkedList<Integer> ll = new LinkedList<>();
+          ll.addFirst(1);
         ll.addFirst(2);
         
     }
