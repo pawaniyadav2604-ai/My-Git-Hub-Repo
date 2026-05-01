@@ -1,8 +1,8 @@
 package LinkedList;
 
-import java.util.LinkedList;
+import java.util.*;
 
-public class Addfirst {
+class Addfirst {
      public static class  nodes {
         int data ;
          nodes next;
@@ -32,8 +32,8 @@ public class Addfirst {
         head = newNode;
     }
     public static void main(String[] args) {
-        LinkedList ll = new LinkedList<>();
-        ll.addFirst(1);
+        LinkedList ll = new LinkedList();
+        ll.head(1);
         ll.addFirst(2);
         
     }
