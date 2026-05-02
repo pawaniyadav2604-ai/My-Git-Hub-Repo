@@ -1,6 +1,8 @@
 package LinkedList;
 
-public class printaLinkedList {
+//import java.util.LinkedList;
+
+public class Addinmiddle {
 
     public static class nodes {
         int data;
@@ -53,15 +55,40 @@ public class printaLinkedList {
         System.out.println("null");
     }
 
+
+    public void add(int ind, int data){
+        if(ind == 0){
+        addfirst(data);
+        return;
+    }
+
+        nodes newNode = new nodes(data);
+        nodes temp = head;
+        int i =0 ; 
+        while (i < ind-1) {
+            temp = temp.next;
+            i++;
+        }
+
+        newNode.next = temp.next;
+        temp.next = newNode;
+    }
+
     public static void main(String[] args) {
-
-        printaLinkedList ll = new printaLinkedList();  // ✅ use your class
-
-        ll.addfirst(1);
-        ll.addfirst(2);
-        ll.addLast(3);
-        ll.addLast(4);
-
+        Addinmiddle ll = new Addinmiddle();
+        //LinkedList<Integer> ll = new LinkedList<>();
         ll.print();
+        ll.addfirst(2);
+        ll.print();
+        ll.addfirst(1);
+        ll.print();
+        ll.addLast(3);
+        ll.print();
+        ll.addLast(4);
+        ll.print();
+        ll.add(2,9);
+        ll.print();
+
+    
     }
 }
