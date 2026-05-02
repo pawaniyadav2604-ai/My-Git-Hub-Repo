@@ -1,8 +1,6 @@
 package LinkedList;
 
-//import java.util.LinkedList;
-
-public class Addinmiddle {
+public class Removefirst {
 
     public static class nodes {
         int data;
@@ -16,12 +14,13 @@ public class Addinmiddle {
 
     public static nodes head;
     public static nodes tail;
-    
+    public int size;/// by default iski value 0 hoti hai 
+
 
     public void addfirst(int data) {
         nodes newNode = new nodes(data);
-
-        if (head == null) {   // ✅ fixed
+        size++;
+        if (head == null) {  
             head = tail = newNode;
             return;
         }
@@ -32,7 +31,7 @@ public class Addinmiddle {
 
     public void addLast(int data) {
         nodes newNode = new nodes(data);
-
+        size++;
         if (head == null) {
             head = tail = newNode;
             return;
@@ -64,6 +63,7 @@ public class Addinmiddle {
     }
 
         nodes newNode = new nodes(data);
+        size++;
         nodes temp = head;
         int i =0 ; 
         while (i < ind-1) {
@@ -75,21 +75,40 @@ public class Addinmiddle {
         temp.next = newNode;
     }
 
-    public static void main(String[] args) {
-        Addinmiddle ll = new Addinmiddle();
-        //LinkedList<Integer> ll = new LinkedList<>();
-        ll.print();
-        ll.addfirst(2);
-        ll.print();
-        ll.addfirst(1);
-        ll.print();
-        ll.addLast(3);
-        ll.print();
-        ll.addLast(4);
-        ll.print();
-        ll.add(2,9);
-        ll.print();
+    public int removeFirst(){
+        if(size==0){
+            System.out.println("ll is empty");
+            return Integer.MIN_VALUE;
+        }
+        else if (size==1) {
+            int val = head.data;
+            head = tail = null ;
+            size=0;
+            return val;
+        }
+        int val = head.data;
+        head= head.next;
+        size--;
+        return val;
+    }
 
-    
+    public static void main(String[] args) {
+       Removefirst ll = new Removefirst();
+        //LinkedList<Integer> ll = new LinkedList<>();
+        ll.addfirst(2);
+        ll.addfirst(1);
+        ll.addLast(4);
+        ll.addLast(5);
+        ll.add(2,3);
+        
+        ll.print();
+        System.out.println(ll.size);
+        ll.removeFirst();
+        ll.print();
+        System.out.println(ll.size);
     }
 }
+
+
+
+
