@@ -52,18 +52,26 @@ public class detectaloop {
         System.out.println("null");
     }
 
+
+    public static boolean isCycle(){
+        nodes slow = head;
+        nodes fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow= slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
+                return true; /// cycle exist
+            }
+        }
+        return false; //// cyclre doesnt exist
+    }
+
     public static void main(String[] args) {
-
-        detectaloop ll = new detectaloop();
- 
-        ll.addfirst(2);
-        ll.addfirst(1);
-        ll.addLast(3);
-        ll.addLast(4);
-        ll.addLast(5);
-
-        ll.print();
-
-       
+        head = new nodes(1);       
+        head.next = new nodes(2);       
+        head.next.next = new nodes(3);       
+        head.next.next.next = new nodes(4);   
+        System.out.println(isCycle());    
     }
 }
