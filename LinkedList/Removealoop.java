@@ -1,6 +1,6 @@
 package LinkedList;
 
-public class detectaloop {
+public class Removealoop {
     public static class nodes {
         int data;
         nodes next;
@@ -52,7 +52,7 @@ public class detectaloop {
         System.out.println("null");
     }
 
-
+    
     public static boolean isCycle(){
         nodes slow = head;
         nodes fast = head;
@@ -67,11 +67,48 @@ public class detectaloop {
         return false; //// cyclre doesnt exist
     }
 
+
+    public static  void removecycle(){
+        // detect cycle 
+        nodes slow = head;
+        nodes fast = head;
+        boolean cycle = false;
+        while ( fast != null  && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if ( fast == slow) {
+                cycle = true;
+                break;
+            }
+        }
+        if(cycle == false){
+            return;
+        }
+
+
+        // find meeting point 
+        slow = head;
+        nodes prev = null;
+        while (slow != fast) {
+            prev = fast;
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        // remove cycle -- last.next= null 
+        prev.next = null;
+    }
+
     public static void main(String[] args) {
-        head = new nodes(1);       
-        head.next = new nodes(2);       
+        head = new nodes(1); 
+        nodes temp = new nodes(2);
+        head.next= temp;        
         head.next.next = new nodes(3);       
-        head.next.next.next = head;   
-        System.out.println(isCycle());    
+        head.next.next.next = temp;  
+        System.out.println(isCycle());
+        removecycle();
+        System.out.println(isCycle()); 
+          
     }
 }
