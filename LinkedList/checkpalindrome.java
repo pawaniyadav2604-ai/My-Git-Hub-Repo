@@ -52,7 +52,9 @@ public class checkpalindrome {
         }
         System.out.println("null");
     }
-   //// slow-fast approach 
+
+
+   /////////////// slow-fast approach /////////
     public nodes findmid(nodes head){
         nodes slow = head ;
         nodes fast = head;
