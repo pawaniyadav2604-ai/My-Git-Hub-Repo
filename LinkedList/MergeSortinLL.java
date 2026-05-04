@@ -102,8 +102,11 @@ public class MergeSortinLL {
     if(head == null || head.next == null){
         return head;
     }
+    
     // find mid
     nodes mid = getmid(head);
+
+
     /// left and right merge sort 
     nodes righthead = mid.next;
     mid.next = null ;
