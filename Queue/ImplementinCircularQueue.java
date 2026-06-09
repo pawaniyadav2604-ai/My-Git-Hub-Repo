@@ -44,11 +44,7 @@ public class ImplementinCircularQueue {
                 System.out.println("queue is empty ");
                 return -1;
             }
-
-
            int result = arr[front];
-           
-
            // jab last element delete ho 
            if (rear== front) {
             rear = front = -1;
