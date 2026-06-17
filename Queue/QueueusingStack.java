@@ -3,7 +3,7 @@ package Queue;
 import java.util.Stack;
 
 import Stack.stackusingCollectionFramework;
-
+/// push(O(n))  pop && peek O(1);
 public class QueueusingStack {
     static class  Queue {
     static Stack<Integer> s1 = new Stack<>();
