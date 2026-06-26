@@ -22,7 +22,7 @@ public class Twosum {
         int[] ans = twoSum(nums, target);
 
         if (ans.length == 2) {
-            System.out.println(ans[0] + " " + ans[1]);
+            System.out.println("["+ ans[0] + " " + ans[1]+ "]");
         } else {
             System.out.println("No pair found");
         }
