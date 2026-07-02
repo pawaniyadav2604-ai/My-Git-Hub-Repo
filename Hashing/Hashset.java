@@ -20,5 +20,7 @@ public class Hashset {
         if (hs.contains(2)) {
             System.out.println(" set contains 2");
         }
+        hs.clear();
+        System.out.println(hs.isEmpty());
     }
 }
