@@ -23,6 +23,25 @@ public class JobSequencing {
             jobs.add(new Job(i, jobsInfo[i][0], jobsInfo[i][1]));
         }
 
-        Collections.sort(jobs,(a,b) -> a.profit);
+        Collections.sort(jobs,(a,b) -> b.profit-a.profit);//descending order 
+        
+        ArrayList<Integer> seq = new ArrayList<>();
+        int time = 0;
+
+        for (int i = 0; i < jobs.size(); i++) {
+            Job curr = jobs.get(i);
+
+            if (curr.deadline > time) {
+                seq.add(curr.id);
+                time++;
+            }
+        }
+
+        System.out.println("max jobs : " + seq.size());
+        for (int i = 0; i < seq.size(); i++) {
+            System.out.println(seq.get(i));
+        }
+        System.out.println();
+    
     }
 }
