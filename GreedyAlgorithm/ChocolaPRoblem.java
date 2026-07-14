@@ -6,8 +6,8 @@ import java.util.Collections;
 public class ChocolaPRoblem {
     public static void main(String[] args) {
         int n = 8, m= 8;
-        Integer Costver[] = {2,1,3,1,4}; //m-1
-        Integer Costhor[] = {4,1,2}; //n-1
+        Integer Costver[] = {2,1,3,1,4,3,1,5}; //m-1
+        Integer Costhor[] = {4,1,2,4,3,5,1,3}; //n-1
 
         Arrays.sort(Costver ,Collections.reverseOrder());
         Arrays.sort(Costhor,Collections.reverseOrder());
