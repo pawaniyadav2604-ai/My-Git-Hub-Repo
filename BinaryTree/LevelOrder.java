@@ -1,7 +1,10 @@
 package BinaryTree;
 
-public class PostorderTree {
-   
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class LevelOrder {
+
         static class Node {
         int data;
         Node left;
@@ -28,14 +31,33 @@ public class PostorderTree {
               return newNode;
         }
 
-        public static void preorder(Node root){
+        public static void LevelorderTraversal(Node root){
             if (root == null) {
                 return;
             }
-            
-            preorder(root.left);
-            preorder(root.right);
-            System.out.println(root.data + " ");
+            Queue<Node> q = new LinkedList<>();
+            q.add(root);
+            q.add(null);
+
+            while (!q.isEmpty()) {
+                Node currnode = q.remove();
+                if (currnode == null) {
+                    System.out.println();
+                    if (q.isEmpty()) {
+                        break;
+                    }else{
+                        q.add(null);
+                    }
+                }else{
+                    System.out.println(currnode.data + " ");
+                    if (currnode.left != null) {
+                        q.add(currnode .left);
+                    }
+                    if (currnode.right != null) {
+                        q.add(currnode.right);
+                    }
+                }
+            }
         }
             
         }
@@ -43,7 +65,7 @@ public class PostorderTree {
         int nodes[] = {1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
         Binarytree tree = new Binarytree();
         Node root =tree.buildTree(nodes);
-        tree.preorder(root);
+    tree.LevelorderTraversal(root);
     }
 }
 
