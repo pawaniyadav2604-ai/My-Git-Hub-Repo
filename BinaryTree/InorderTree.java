@@ -1,7 +1,7 @@
-package BinaryTree.Inorder;
+package BinaryTree;
 
-public class tree {
-        static class Node {
+public class InorderTree {
+     static class Node {
         int data;
         Node left;
         Node right;
@@ -13,8 +13,7 @@ public class tree {
          }
             
         }
-
-        static class  Binarytree {
+         static class  Binarytree {
         static int index = -1;
         public static Node buildTree(int nodes[]){
             index++;
@@ -26,23 +25,22 @@ public class tree {
             newNode.right = buildTree(nodes);
               return newNode;
         }
-
-        public static void Ineorder(Node root){
+          public static void Ineorder(Node root){
             if (root == null) {
                 return;
             }
-             Ineorder(root.left);
+            Ineorder(root.left);
             System.out.println(root.data + " ");
-           
+            
             Ineorder(root.right);
         }
             
         }
-    public static void main(String[] args) {
+
+         public static void main(String[] args) {
         int nodes[] = {1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
         Binarytree tree = new Binarytree();
         Node root =tree.buildTree(nodes);
     tree.Ineorder(root);
     }
 }
-
