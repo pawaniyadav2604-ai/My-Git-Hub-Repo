@@ -20,7 +20,7 @@ public class Implementation {
     
         
 
-    @SuppressWarnings("unchecked")
+   // @SuppressWarnings("unchecked")
 
     public  HashMap(){
         this.N = 4;
